@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Pelotas Oficiales de Mundiales ganados por Sudamericanos</title>
+  </head>
+  <body>
+    <header>
+        <!-- este div es para el intento de animación del h1 -->
+        <div>
+            <h1>Campeonatos del Mundo Ganados por Sudamérica</h1>
+        </div>
+    </header>
+    <main>
+      <h2>Pelotas Oficiales</h2>
+      <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+          <!--  Model de Productos  -->
+          <!--<div id="1" class="item">
+                    <span class="anfitrion-item">Francia 1924</span>
+                    <span class="campeon-item">Campeón: Uruguay</span>
+                    <img src="img/pelota1924.png" alt="" class="img-item">
+                    <span class="precio-item">$65.000</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div> -->
+        </div>
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+          <div class="header-carrito">
+            <h2>Tu Carrito</h2>
+          </div>
+
+          <div id="carrito" class="carrito-items">
+            <!--<div class="carrito-item">
+                        <img src="${imagenSrc}" width="80px" alt="">
+                        <div class="carrito-item-detalles">
+                            <span class="carrito-item-id">${id}</span>
+                            <span class="carrito-item-titulo">${anfitrion}</span>
+                            <span class="carrito-item-titulo">${campeon}</span>
+                            <div class="selector-cantidad">
+                                <i class="bi bi-dash-lg restar-cantidad"></i>
+                                <input type="text" value="${cantidad}" class="carrito-item-cantidad" disabled>
+                                <i class="bi bi-plus-lg sumar-cantidad"></i>
+                            </div>
+                            <span class="carrito-item-precio">${precio}</span>
+                        </div>
+                        <button class="btn-eliminar">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div> -->
+          </div>
+          <div class="carrito-total">
+            <div class="fila">
+              <strong>Tu Total</strong>
+              <span class="carrito-precio-total"> $120.000,00 </span>
+            </div>
+            <button class="btn-pagar">
+              Pagar <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Todos los Derechos Reservados - Renzo Mastrangelo</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/fetch.js"></script>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>
