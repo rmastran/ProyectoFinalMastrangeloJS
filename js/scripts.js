@@ -292,10 +292,10 @@ function restarCantidad(event) {
           'La Pelota ha sido eliminada del carrito.',
           'success'
         )
-        let botonEliminar = selectorParent.parentElement.getElementsByClassName("btn-eliminar")[0];
-        botonEliminar.click();
       }
     })
+    let botonEliminar = selectorParent.parentElement.getElementsByClassName("btn-eliminar")[0];
+    botonEliminar.click();
   }
 }
 
