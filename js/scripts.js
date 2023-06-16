@@ -60,11 +60,16 @@ function obtenerItemsCarrito() {
 
 //Eliminamos todos los elementos del carrito, vaciamos en localStorage y lo ocultamos
 function pagarClicked() {
-  Swal.fire(
-    'Gracias por su compra!',
-    'Compra realizada con éxito.',
-    'success'
-  )
+  //Utilizamos librería SweetAlert2
+  Swal.fire({
+    title: 'Gracias por su compra!',
+    text: 'Compra realizada con éxito.',
+    icon: 'success',
+    confirmButtonColor: '#101d42',
+    timer: '5000',
+    timerProgressBar: true
+  })
+
   //Elimino todos los elmentos del carrito
   let carritoItems = document.getElementsByClassName("carrito-items")[0];
   while (carritoItems.hasChildNodes()) {
@@ -137,16 +142,20 @@ function agregarItemAlCarrito(
   let itemsCarrito = document.getElementsByClassName("carrito-items")[0];
 
   if (!local) {
-    //controlamos que el item que intenta ingresar no se encuentre en el carrito si es que lo agrego el usuario.
+    //Controlamos que el item que intenta ingresar no se encuentre ya en el carrito
     let nombresItemsCarrito = itemsCarrito.getElementsByClassName(
       "carrito-item-titulo"
     );
     for (let i = 0; i < nombresItemsCarrito.length; i++) {
       if (nombresItemsCarrito[i].innerText == anfitrion) {
+        //Utilizamos librería SweetAlert2
         Swal.fire({
           icon: 'error',
-          title: 'Oops...',
-          text: 'Esta Pelota ya se agregó al carrito.'
+          title: 'Ups...',
+          text: 'Esta Pelota ya se agregó al carrito.',
+          confirmButtonColor: '#101d42',
+          timer: '5000',
+          timerProgressBar: true
         })
         return;
       }
@@ -222,24 +231,6 @@ function restarCantidad(event) {
     actualizaCantidad(id, cantidadActual);
     actualizarTotalCarrito();
   } else {
-    // Eliminar item del carrito enviando el evento click del Boton Eliminar
-    Swal.fire({
-      title: 'Estás seguro?',
-      text: "Se eliminará del carrito ésta Pelota!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, eliminar Pelota'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          'Eliminado!',
-          'La Pelota ha sido eliminada del carrito.',
-          'success'
-        )
-      }
-    })
     let botonEliminar = selectorParent.parentElement.getElementsByClassName("btn-eliminar")[0];
     botonEliminar.click();
   }
@@ -267,21 +258,28 @@ function actualizaDelCarrito(id) {
 
 //Elimino el item seleccionado del carrito
 function eliminarItemCarrito(event) {
+  //Utilizamos librería SweetAlert2
   Swal.fire({
     title: 'Está seguro?',
     text: "Se eliminará del carrito esta Pelota!",
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonColor: '#3085d6',
+    confirmButtonColor: '#101d42',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Ok'
+    confirmButtonText: 'Si, elminar Pelota',
+    cancelButtonText: 'Cancelar',
+    timer: '5000',
+    timerProgressBar: true
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire(
-        'Eliminado!',
-        'La Pelota ha sido eliminada del carrito.',
-        'success'
-      )
+      Swal.fire({
+        title: 'Eliminado!',
+        text: 'La Pelota ha sido eliminada del carrito.',
+        icon: 'success',
+        confirmButtonColor: '#101d42',
+        timer: '5000',
+        timerProgressBar: true
+      })
       let buttonClicked = event.target;
   let carritoItem = buttonClicked.parentElement;
   let carritoItemDetalles = carritoItem.getElementsByClassName(
