@@ -1,18 +1,9 @@
 const agregarCarritoItemsDOM = async () => {
-  /*  Modelo
-        <div id="1" class="item">
-            <span class="anfitrion-item">Francia 1924</span>
-            <span class="campeon-item">Campeón: Uruguay</span>
-            <img src="img/pelota1924.png" alt="" class="img-item">
-            <span class="precio-item">$65.000</span>
-            <button class="boton-item">Agregar al Carrito</button>
-        </div>
-    */
   try {
-    const response = await fetch("./producto.json");
-    const producto = await response.json();
+    const response = await fetch("./productos.json");
+    const productos = await response.json();
 
-    producto.forEach((item) => {
+    productos.forEach((item) => {
       const parent = document.getElementsByClassName("contenedor-items")[0];
   
       const divItem = document.createElement("div");
