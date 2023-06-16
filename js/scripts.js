@@ -224,13 +224,13 @@ function restarCantidad(event) {
   } else {
     // Eliminar item del carrito enviando el evento click del Boton Eliminar
     Swal.fire({
-      title: 'Está seguro?',
+      title: 'Estás seguro?',
       text: "Se eliminará del carrito ésta Pelota!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Ok'
+      confirmButtonText: 'Si, eliminar Pelota'
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire(
